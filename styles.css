@@ -1,5 +1,8 @@
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0px;
     padding: 0px;
@@ -32,11 +35,13 @@ body {
 
     & .search-section {
         display: flex;
-        justify-content: center;
+        /* justify-content: center; */
+        margin: 0px auto;
         height: 7%;
+        max-width: 600px;
         & .search-input {
             padding-left: 15px;
-            width: 250px;
+            width: 90%;
             border-radius: 11px 0px 0px 11px;
             border-width: 0px;
         }
@@ -44,7 +49,7 @@ body {
         & .search-button {
             border-radius: 0px 11px 11px 0px;
             border-width: 0px;
-            width: 50px;
+            width: 10%;
             background: hsl(0, 0%, 17%);
             display: flex;
             justify-content: center;
@@ -60,12 +65,13 @@ body {
         }
     }
     & .info-section {
-        width: 85%;
+        min-height: 150px;
+        max-width: 950px;
         background: white;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 25px auto 0px auto;
+        margin: 35px auto 0px auto;
         border-radius: 20px;
         padding: 20px 0px;
         z-index: 1000;
@@ -85,16 +91,35 @@ body {
 
         @media (min-width: 900px) {
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: space-evenly;
+            margin-top: 35px;
+            & h3 {
+                text-align: start;
+                font-size: 12px;
+                margin-top: 0px;
+            }
+
+            & p {
+                font-size: 20px;
+            }
+            & .info-col {
+                height: 80px;
+                width: 20%;
+                padding-right: 60px;
+                border-right: 1px solid hsl(0, 0%, 59%);
+            }
+            & .info-col:last-child {
+                border-right: none;
+            }
         }
     }
 
     & #map {
-        height: 65%; 
+        height: 80%; 
         margin-top: -150px;
 
         @media (min-width: 900px) {
-            margin-top: 0px;
+            margin-top: -75px;
         }
     }
 }
