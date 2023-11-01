@@ -1,5 +1,10 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
 * {
     box-sizing: border-box;
 }
@@ -8,10 +13,54 @@ body {
     padding: 0px;
     font-family: "Rubik", sans-serif;
 }
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1001;
+    background-color: rgba(128, 128, 128, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    & .popup {
+        text-align: center;
+        width: 100%;
+        height: 200px;
+        background: white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        & .popup-text {
+            width: 30ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        & .popup-button {
+            background-color: hsl(0, 0%, 17%);
+            font-size: 1rem;
+            padding: 1em 2em;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (min-width: 530px) {
+            width: 500px;
+            & .popup-text {
+                width: 40ch;
+            }
+        }
+    }
+}
+
 .container {
     height: 100vh;
     & .background-img {
-        height: 38%;
+        height: 38vh;
         background-image: url("images/pattern-bg-mobile.png");
         background-size: cover;
         position: absolute;
@@ -21,13 +70,12 @@ body {
         @media (min-width: 376px) {
             background-image: url("images/pattern-bg-desktop.png");
         }
-
     }
 
     & h1 {
         margin: 0px;
         font-weight: 500;
-        font-size: 25px;
+        font-size: 1.5rem;
         padding: 20px 0px;
         text-align: center;
         color: white;
@@ -38,23 +86,26 @@ body {
         margin: 0px auto;
         height: 7%;
         width: 88%;
+
         & .search-input {
-            padding-left: 15px;
-            width: 90%;
+            padding-left: 1.2em;
+            width: 85%;
             border-radius: 11px 0px 0px 11px;
             border-width: 0px;
+            cursor: pointer;
+            font-size: 0.9rem;
         }
 
         & .search-button {
             border-radius: 0px 11px 11px 0px;
             border-width: 0px;
-            width: 10%;
+            width: 15%;
             background: hsl(0, 0%, 17%);
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 1em;
-
+            cursor: pointer;
 
             & .button-icon {
                 background-image: url("images/icon-arrow.svg");
@@ -66,6 +117,13 @@ body {
 
         @media (min-width: 900px) {
             max-width: 600px;
+            & .search-input {
+                width: 90%;
+                font-size: 1.1rem;
+            }
+            & .search-button {
+                width: 10%;
+            }
         }
     }
     & .info-section {
@@ -77,38 +135,39 @@ body {
         align-items: center;
         margin: 35px auto 0px auto;
         border-radius: 20px;
-        padding: 20px 0px;
+        padding: 1em 0px;
         z-index: 1000;
         position: relative;
 
         & h3 {
             font-weight: 700;
             color: hsl(0, 0%, 59%);
-            font-size: 10px;
+            font-size: 0.8rem;
             text-align: center;
             text-transform: uppercase;
         }
         & .location-info {
             margin: 8px 0px 10px 0px;
             font-weight: 700;
+            font-size: 1.2rem;
         }
 
         @media (min-width: 900px) {
             max-width: 950px;
             flex-direction: row;
             justify-content: space-evenly;
-            margin-top: 35px;
+            align-items: stretch;
+            padding: 2em 0px;
             & h3 {
                 text-align: start;
-                font-size: 12px;
+                font-size: 0.75rem;
                 margin-top: 0px;
             }
 
             & .location-info {
-                font-size: 20px;
+                font-size: 1.25rem;
             }
             & .info-col {
-                height: 80px;
                 width: 20%;
                 padding-right: 60px;
                 border-right: 1px solid hsl(0, 0%, 59%);
@@ -120,7 +179,7 @@ body {
     }
 
     & #map {
-        height: 80%; 
+        height: 80vh;
         margin-top: -150px;
 
         @media (min-width: 900px) {
