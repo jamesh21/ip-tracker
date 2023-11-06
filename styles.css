@@ -60,7 +60,7 @@ body {
 .container {
     height: 100vh;
     & .background-img {
-        height: 38vh;
+        height: 44vh;
         background-image: url("images/pattern-bg-mobile.png");
         background-size: cover;
         position: absolute;
