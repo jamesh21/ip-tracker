@@ -1,57 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,700,800">
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <title>Frontend Mentor | IP Address Tracker</title>
-</head>
-<body>
-    <div class="popup-container">
-        <div class="popup">
-            <p class="popup-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos expedita veritatis debitis facere voluptatum. Pariatur sunt excepturi reprehenderit, neque laborum atque numquam velit, dolore est, recusandae maxime delectus quidem obcaecati.</p>
-            <button class="popup-button">OK</button>
-        </div>
-    </div>
-    <div class="container">
-        
-        <div class="background-img"></div>
-        <h1>IP Address Tracker</h1>
-        <section class="search-section">
-            <input type="text" class="search-input" placeholder="Search for any IP address or domain">
-            <button class="search-button">
-                <div class="button-icon"></div>
-            </button>
-        </section>
-        <section class="info-section">
-            <div class="info-col">
-                <h3>IP Address</h3>
-                <p class="location-info"></p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""
+        />
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script
+            src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Rubik:400,700,800"
+        />
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>Frontend Mentor | IP Address Tracker</title>
+    </head>
+    <body>
+        <main>
+            <div class="popup-container">
+                <div class="popup">
+                    <p class="popup-text"></p>
+                    <button class="popup-button">OK</button>
+                </div>
             </div>
-            <div class="info-col">
-                <h3>Location</h3>
-                <p class="location-info"></p>
+            <div class="container">
+                <div class="background-img"></div>
+                <h1>IP Address Tracker</h1>
+                <section class="search-section">
+                    <input
+                        type="text"
+                        class="search-input"
+                        placeholder="Search for any IP address or domain"
+                    />
+                    <button class="search-button" aria-label="Track IP">
+                        <div class="button-icon"></div>
+                    </button>
+                </section>
+                <section class="info-section">
+                    <div class="info-col">
+                        <h2>IP Address</h2>
+                        <p class="location-info"></p>
+                    </div>
+                    <div class="info-col">
+                        <h2>Location</h2>
+                        <p class="location-info"></p>
+                    </div>
+                    <div class="info-col">
+                        <h2>Timezone</h2>
+                        <p class="location-info"></p>
+                    </div>
+                    <div class="info-col">
+                        <h2>ISP</h2>
+                        <p class="location-info"></p>
+                    </div>
+                </section>
+                <div id="map"></div>
             </div>
-            <div class="info-col">
-                <h3>Timezone</h3>
-                <p class="location-info"></p>
+        </main>
+        <footer>
+            <div class="attribution">
+                Challenge by
+                <a
+                    href="https://www.frontendmentor.io?ref=challenge"
+                    target="_blank"
+                    >Frontend Mentor</a
+                >. Coded by <a href="#">Your Name Here</a>.
             </div>
-            <div class="info-col">
-                <h3>ISP</h3>
-                <p class="location-info"></p>
-            </div>
-        </section>
-        <div id="map"></div>
-    </div>
-    <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="#">Your Name Here</a>.
-    </div>
-  <script src="index.js"></script>
-</body>
+        </footer>
+        <script src="index.js"></script>
+    </body>
 </html>
